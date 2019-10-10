@@ -1,1 +1,1 @@
-# snippet-library
+# Snippet Library
