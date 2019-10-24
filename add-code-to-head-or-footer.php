@@ -16,7 +16,7 @@ function wpmm_add_code_to_head() {
 
 }
 
-add_action('wpmm_head', 'wpmm_add_code_to_header', 10, 1);
+add_action('wpmm_head', 'wpmm_add_code_to_head', 10, 1);
 
 /**
  * Add code right before </body>
