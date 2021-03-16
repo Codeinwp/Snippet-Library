@@ -1,7 +1,8 @@
 <?php
 
 /**
- * Change maintenance mode template path
+ * Change maintenance.php template path
+ * (the default file can be found in `/wp-maintenance-mode/views/`)
  * 
  * @param string $path
  * @return string
@@ -13,7 +14,8 @@ function wpmm_change_maintenance_template_path($path) {
 add_filter('wpmm_maintenance_template', 'wpmm_change_maintenance_template_path', 10, 1);
 
 /**
- * Change contact email template path
+ * Change contact.php template path
+ * (the default file can be found in `/wp-maintenance-mode/views/`)
  * 
  * @param string $path
  * @return string
