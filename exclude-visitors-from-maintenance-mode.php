@@ -76,3 +76,20 @@ function wpmm_exclude_post_requests($is_excluded) {
 }
 
 add_filter('wpmm_is_excluded', 'wpmm_exclude_post_requests', 10, 1);
+
+/**
+ * Exclude visitors that access a specific domain
+ * (use case: https://github.com/andrianvaleanu/WP-Maintenance-Mode/issues/260)
+ * 
+ * @param boolean $is_excluded
+ * @return boolean
+ */
+function wpmm_exclude_domain($is_excluded) {
+    if (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'domain.com') !== false) {
+        return true;
+    }
+
+    return $is_excluded;
+}
+
+add_filter('wpmm_is_excluded', 'wpmm_exclude_domain', 10, 1);
